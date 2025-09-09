@@ -1,0 +1,11 @@
+﻿using Razor_Pages_Todo.Models.DTOs;
+using Razor_Pages_Todo.Models.Entities;
+
+namespace Razor_Pages_Todo.Services
+{
+    public interface IUserTaskService
+    {
+        IEnumerable<UserTask> GetTasks();
+        UserTask CreateTask(UserTaskDto taskDto);
+    }
+}

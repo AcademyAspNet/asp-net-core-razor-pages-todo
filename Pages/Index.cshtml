@@ -1,0 +1,26 @@
+﻿@page
+@model Razor_Pages_Todo.Pages.IndexModel
+
+@inject IUserTaskService userTaskService
+
+<h1>Планировщик задач</h1>
+<hr />
+
+<ol>
+    @foreach (UserTask task in userTaskService.GetTasks())
+    {
+        <li>
+            (ID: @task.Id)
+            <b>@task.Title</b>
+            
+            @if (task.IsDone)
+            {
+                <span class="text-success">(Выполнена)</span>
+            }
+            else
+            {
+                <span class="text-danger">(Не выполнена)</span>
+            }
+        </li>
+    }
+</ol>
