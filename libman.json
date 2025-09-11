@@ -9,6 +9,15 @@
         "dist/css/bootstrap.min.css",
         "dist/js/bootstrap.bundle.min.js"
       ]
+    },
+    {
+      "library": "bootstrap-icons@1.13.1",
+      "destination": "wwwroot/libraries/bootstrap-icons/",
+      "files": [
+        "font/fonts/bootstrap-icons.woff",
+        "font/fonts/bootstrap-icons.woff2",
+        "font/bootstrap-icons.min.css"
+      ]
     }
   ]
 }

@@ -7,5 +7,6 @@ namespace Razor_Pages_Todo.Services
     {
         IEnumerable<UserTask> GetTasks();
         UserTask CreateTask(UserTaskDto taskDto);
+        bool DeleteTaskById(int taskId);
     }
 }

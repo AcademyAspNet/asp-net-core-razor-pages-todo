@@ -3,24 +3,36 @@
 
 @inject IUserTaskService userTaskService
 
-<h1>Планировщик задач</h1>
+<h2>Список задач</h2>
 <hr />
 
-<ol>
+<div>
     @foreach (UserTask task in userTaskService.GetTasks())
     {
-        <li>
-            (ID: @task.Id)
-            <b>@task.Title</b>
-            
-            @if (task.IsDone)
-            {
-                <span class="text-success">(Выполнена)</span>
-            }
-            else
-            {
-                <span class="text-danger">(Не выполнена)</span>
-            }
-        </li>
+        <div class="card mb-3">
+            <div class="card-header">
+                <span class="fw-medium">
+                    @task.Title
+                </span>
+            </div>
+            <div class="card-body">
+                @if (task.Description != null)
+                {
+                    <span>@task.Description</span>
+                }
+                else
+                {
+                    <span>
+                        <i>У задачи отсутствует описание.</i>
+                    </span>
+                }
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-danger">
+                    <i class="bi bi-trash3"></i>
+                    Удалить
+                </a>
+            </div>
+        </div>
     }
-</ol>
+</div>

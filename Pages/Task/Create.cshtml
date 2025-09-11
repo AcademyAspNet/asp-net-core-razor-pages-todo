@@ -1,0 +1,22 @@
+﻿@page
+@model Razor_Pages_Todo.Pages.Task.CreateModel
+
+<h2>Новая задача</h2>
+<hr />
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="UserTask.Title"></label>
+        <input class="form-control" asp-for="UserTask.Title" />
+        <span class="text-danger" asp-validation-for="UserTask.Title"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="UserTask.Description"></label>
+        <textarea class="form-control" asp-for="UserTask.Description"></textarea>
+        <span class="text-danger" asp-validation-for="UserTask.Description"></span>
+    </div>
+    <button class="btn btn-primary" type="submit">
+        <i class="bi bi-plus-circle"></i>
+        Добавить задачу
+    </button>
+</form>

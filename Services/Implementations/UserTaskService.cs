@@ -5,20 +5,8 @@ namespace Razor_Pages_Todo.Services.Implementations
 {
     public class UserTaskService : IUserTaskService
     {
-        private readonly IList<UserTask> _tasks;
-        private int _nextId;
-
-        public UserTaskService()
-        {
-            _tasks = new List<UserTask>();
-            _nextId = 0;
-
-            for (int i = 0; i < 100; i++)
-            {
-                UserTaskDto taskDto = new UserTaskDto() { Title = $"Задача #{i}" };
-                CreateTask(taskDto);
-            }
-        }
+        private readonly IList<UserTask> _tasks = new List<UserTask>();
+        private int _nextId = 0;
 
         public IEnumerable<UserTask> GetTasks()
         {
@@ -38,6 +26,11 @@ namespace Razor_Pages_Todo.Services.Implementations
             _tasks.Add(task);
 
             return task;
+        }
+
+        public bool DeleteTaskById(int taskId)
+        {
+            return false;
         }
     }
 }
