@@ -16,5 +16,8 @@ namespace Razor_Pages_Todo.Models.DTOs
         [DisplayName("Описание задачи")]
         [DataType(DataType.MultilineText)]
         public string? Description { get; set; }
+
+        [DisplayName("Задача выполнена")]
+        public bool IsDone { get; set; }
     }
 }

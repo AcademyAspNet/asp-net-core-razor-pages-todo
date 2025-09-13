@@ -13,6 +13,11 @@ namespace Razor_Pages_Todo.Services.Implementations
             return _tasks;
         }
 
+        public UserTask? GetTaskById(int taskId)
+        {
+            return _tasks.FirstOrDefault(t => t.Id == taskId);
+        }
+
         public UserTask CreateTask(UserTaskDto taskDto)
         {
             UserTask task = new UserTask()
@@ -30,6 +35,20 @@ namespace Razor_Pages_Todo.Services.Implementations
 
         public bool DeleteTaskById(int taskId)
         {
+            for (int i = 0; i < _tasks.Count; i++)
+            {
+                UserTask task = _tasks[i];
+
+                if (task == null)
+                    continue;
+
+                if (task.Id != taskId)
+                    continue;
+
+                _tasks.RemoveAt(i);
+                return true;
+            }
+
             return false;
         }
     }

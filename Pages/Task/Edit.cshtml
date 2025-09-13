@@ -1,0 +1,27 @@
+﻿@page
+@model Razor_Pages_Todo.Pages.Task.EditModel
+
+<h2>Редактирование задачи</h2>
+<hr />
+
+<form method="post">
+    <div class="mb-3">
+        <label class="form-label" asp-for="UserTask.Title"></label>
+        <input class="form-control" asp-for="UserTask.Title" />
+        <span class="text-danger" asp-validation-for="UserTask.Title"></span>
+    </div>
+    <div class="mb-3">
+        <label class="form-label" asp-for="UserTask.Description"></label>
+        <textarea class="form-control" asp-for="UserTask.Description"></textarea>
+        <span class="text-danger" asp-validation-for="UserTask.Description"></span>
+    </div>
+    <div class="mb-3">
+        <input type="checkbox" class="form-check-input me-2" asp-for="UserTask.IsDone" />
+        <label class="form-check-label" asp-for="UserTask.IsDone"></label>
+    </div>
+    <hr />
+    <button class="btn btn-success" type="submit">
+        <i class="bi bi-floppy"></i>
+        Сохранить
+    </button>
+</form>
